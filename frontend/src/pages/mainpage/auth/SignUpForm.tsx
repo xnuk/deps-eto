@@ -34,14 +34,17 @@ const SignUpForm = () => {
 
   return (
     <div className={styles.signUpForm}>
-      <fieldset className={styles.handle}>
-        <label>
-          @ <TextInput type='text' name='handle' placeholder='핸들네임' ref={handleRef} required autoFocus />{' '}
-          ::eto.example.org
+      <label className={styles.col}>
+        <span className={styles.caption}>핸들네임</span>
+        <label className={styles.handle}>
+          <span>@</span>{' '}
+          <TextInput type='text' name='handle' placeholder='핸들네임' ref={handleRef} required autoFocus />{' '}
+          <span>::eto.example.org</span>
         </label>
-      </fieldset>
-      <TextInput type='password' name='password' placeholder='비밀번호' ref={passwordRef} required />
-      <fieldset>
+      </label>
+      <label className={styles.col}>
+        <span className={styles.caption}>비밀번호</span>
+        <TextInput type='password' name='password' placeholder='비밀번호' ref={passwordRef} required />
         <TextInput
           type='password'
           name='passwordConfirm'
@@ -49,16 +52,22 @@ const SignUpForm = () => {
           ref={passwordConfirmRef}
           required
         />
-        <small>비밀번호는 8자 이상 128자 미만이어야 합니다.</small>
+        <span className={styles.caption}>비밀번호는 8자 이상 128자 미만이어야 합니다.</span>
+      </label>
+      <fieldset className={styles.keyOptions}>
+        <Button color='transparent'>기존 아이덴티티 불러오기</Button>
+        <Button color='primary' onClick={handleClick}>
+          새 아이덴티티 생성
+        </Button>
       </fieldset>
       <div className={styles.buttons}>
         <Link to='/'>
-          <Button color='transparent' className={styles.back}>
+          <Button color='transparent' className={styles.iconButton}>
             ←
           </Button>
         </Link>
-        <Button color='primary' onClick={handleClick}>
-          계정 만들기
+        <Button color='transparent' disabled className={styles.iconButton}>
+          →
         </Button>
       </div>
     </div>

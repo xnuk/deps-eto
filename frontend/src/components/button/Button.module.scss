@@ -9,6 +9,16 @@
   transition:
     background-color 0.3s,
     outline 0.1s;
+
+  &:disabled {
+    background-color: $neutral-500;
+    border: none;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $neutral-500;
+    }
+  }
 }
 
 .button-primary {
