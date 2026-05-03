@@ -12,7 +12,7 @@ const SignInForm = () => {
   const handleRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
-  const handleClick = async () => {
+  const handleSubmit = async () => {
     const handle = handleRef.current?.value;
     const password = passwordRef.current?.value;
 
@@ -27,20 +27,20 @@ const SignInForm = () => {
   };
 
   return (
-    <div className={styles.signInForm}>
+    <form className={styles.signInForm} onSubmit={handleSubmit}>
       <TextInput type='text' name='handle' placeholder='핸들네임' ref={handleRef} required autoFocus />
       <TextInput type='password' name='password' placeholder='비밀번호' ref={passwordRef} required />
       <div className={styles.buttons}>
         <Link to='/'>
-          <Button color='transparent' className={styles.back}>
+          <Button color='transparent' type='button' className={styles.back}>
             ←
           </Button>
         </Link>
-        <Button color='primary' onClick={handleClick}>
+        <Button color='primary' type='submit'>
           로그인
         </Button>
       </div>
-    </div>
+    </form>
   );
 };
 

@@ -1,0 +1,48 @@
+.content {
+  padding: 0.75em;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    border-bottom: 1px solid $neutral-800;
+    padding-bottom: 0.75em;
+
+    h2 {
+      font-size: $fs-body1;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.75em 0;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25em;
+
+      .caption {
+        @include caption;
+        opacity: 0.75;
+        color: $neutral-200;
+      }
+    }
+
+    .identityJson {
+      @include code;
+      height: 120px;
+      padding: 0.5em;
+      background-color: $neutral-900;
+      border: 1px solid $neutral-800;
+      color: $neutral-50;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 0.25em;
+    }
+  }
+}

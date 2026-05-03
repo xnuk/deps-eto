@@ -9,9 +9,11 @@
 }
 
 .modal {
-  background: $neutral-50;
-  border-radius: 0.75rem;
-  padding: 2rem;
-  max-width: 480px;
-  width: 100%;
+  background: $neutral-900;
+  border: 1px solid $neutral-700;
+  border-radius: 8px;
+  color: $neutral-100;
+
+  width: 100vw;
+  max-width: 28em;
 }
