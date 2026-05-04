@@ -41,6 +41,8 @@ const SignUpForm = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(signUpPayload),
     });
+
+    console.log(res);
   };
 
   return (
